@@ -1,5 +1,5 @@
 # Data journalism course
-This is a short introduction for R with the igraph package.
+This is a short introduction in R with the igraph package.
 
 Rosalie Zawalinski and Kimberly Nicolaus |
 University of Amsterdam |
