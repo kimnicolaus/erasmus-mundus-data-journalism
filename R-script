@@ -1,0 +1,71 @@
+# 2021/12/09 | Presentation of a network analysis with R and the igraph package
+
+# igraph is a library and R package for network analysis
+# install igraph
+library("igraph")
+
+# read edgelist and assign data to the variable 'el'
+# header=TRUE means: the first row of values in the csv-file is set as column names (header information)
+el <- read.csv('https://raw.githubusercontent.com/kimnicolaus/erasmus-mundus-data-journalism/main/edges.csv', header=TRUE,  sep = ";")
+
+el
+
+# read nodgelist and assign data to variable 'el'
+nl <- read.csv("https://raw.githubusercontent.com/kimnicolaus/erasmus-mundus-data-journalism/main/nodes.csv", header=T, as.is=T, sep = ";")
+
+nl
+
+# use function 'class' to determine what type of object 'el' is
+class(el)
+
+# access the variable names 
+names(el)
+names(nl)
+
+# use the accessor operator $ to access different variables
+el$relation
+
+# the head function returns the first parts of our dataframe
+head(el)
+
+# the tail function returns the last parts of our dataframe
+tail(el)
+
+# convert dataframe 'el' into igraph-object 'eli' 
+eli <- graph_from_data_frame(d=el, directed = TRUE)
+
+# display the igraph-object
+eli
+
+# the plot function plots the igraph-object
+plot(eli)
+
+# reduze the arrow size by using the agrument 'edge.arrow.size'
+plot(eli, edge.arrow.size=0.2)
+
+# display the strength of the connections
+# turn nodges yellow
+# turn nodges labes black
+plot(eli, edge.arrow.size=0.2, edge.width=E(eli)$weight, vertex.color="yellow", vertex.label.color="black")
+
+##########################
+
+# We want to access the nodges attributes (sex, specialization, ...), that's why we need a matrix
+
+# convert edgelist into a matrix and assign a new variable 'elmatrix'
+elmatrix <- as.matrix(el)
+# convert dataframe 'el' into igraph-object 
+el <- graph_from_data_frame(d=elmatrix, vertices=nl, directed=TRUE)
+
+# create two vertex sequences, display CR as squares and PR as circles
+V(el)[V(el)$erasmus == 1]$shape <- "square"
+V(el)[V(el)$erasmus == 2]$shape <- "circle"
+
+plot(el, edge.arrow.size=0.2)
+
+# females are displayed in coral, males are displayed in blue, people who prefer not to say are maroon 
+V(el)[V(el)$sex == 1]$color <- "coral"
+V(el)[V(el)$sex == 2]$color <- "cadetblue"
+V(el)[V(el)$sex == 3]$color <- "maroon"
+
+plot(el, edge.arrow.size=0.4, edge.width=E(eli)$weight)
