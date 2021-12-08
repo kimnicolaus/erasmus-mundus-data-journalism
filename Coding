@@ -1,0 +1,85 @@
+Subnetwork 1: work
+
+1a) In university projects, I prefer to work with the following person from my semester: (Please enter the person's first name here)
+
+1b) In university projects I also like to work with the following person from my semester: (Please enter the person's first name here)
+
+For the network 'work', the person who was named first was given a weight of 3, the second person was given a weight of 1. 
+
+
+Subnetwork 2: travel 
+
+2a) If you were going on a trip, who would be the first person from the study program you would ask to join you? (Please enter the person's first name)
+
+2b) If you were going on a trip, who would be the second person in the study program you would ask to join you?
+
+For the network ‘travel’, the person who was named first was given a weight of 3, the second person was given a weight of 1. 
+
+
+EDGES ATTRIBUTES
+
+ID
+each ID corresponds to one student
+
+WEIGHT
+3 = very strong relationship 
+1 = strong relationship
+
+RELATION
+describes the two subnetworks which is necessary to separate or compare the two networks
+
+6 = ‘work’ project-based relationship: in a directed network, the sender (first column) prefers to collaborate with the named target (second column)
+7 = ‘travel’ freetime-related relationship: in a directed network, the sender (first column) prefers to travel with the named target (second column)
+
+
+NODE ATTRIBUTES
+
+SEX
+Please indicate your gender
+1 = female
+2 = male
+3 = do not prefer to say
+
+ERASMUS
+Which specialization did you choose?
+1 = Amsterdam
+2 = Prague
+
+AGE
+Please indicate your age:
+1 = younger than 23
+2 = 23 to 25
+3 = 26 to 28
+4 = 29 to 31
+5 = older than 31
+
+NATIONALITY 
+Where were you born?
+
+1 = Europe
+2 = South America
+3 = North America
+4 = Africa
+5 = Asia
+
+WORK METHOD 
+Which work method do you prefer?
+
+1 = The sooner I finish the assignment, the better.
+2 = I like to procrastinate.
+
+STUDY
+How many hours do you study besides the lectures?
+
+1 = up to 10 hours per week
+2 = up to 20 hours per week
+3 = up to 30 hours per week
+4 = more than 30 hours per week
+
+JOB 
+How many hours do you work besides your studies?  (only refer to paid work)
+
+1 = none
+2 = up to 5 hours per week
+3 = up to 10 hours per week
+4 = more than 10 hours per week
