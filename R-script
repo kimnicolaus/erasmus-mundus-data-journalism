@@ -57,7 +57,7 @@ elmatrix <- as.matrix(el)
 # convert dataframe 'el' into igraph-object 
 el <- graph_from_data_frame(d=elmatrix, vertices=nl, directed=TRUE)
 
-# create two vertices sequences, display CR as squares and PR as circles
+# create two vertices sequences, display Amsterdam as squares and Prague as circles
 V(el)[V(el)$erasmus == 1]$shape <- "square"
 V(el)[V(el)$erasmus == 2]$shape <- "circle"
 
